@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- English Font  -->
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+KR:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<!-- Korea Font  -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" 
+	rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Custum CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}"/>
+	<title>첫 페이지</title>
+</head>
+<body>
+	
+    <nav class="navbar navbar-dark navbar-expand-md py-0 fixed-top" id="mainNavbar">
+        <a class="navbar-brand" href="#">Pets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinks"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a th:href="@{/siteuser/signup}" class="nav-link">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/siteuser/login}" class="nav-link">log in</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/siteuser/bbs}" class="nav-link">post</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/siteuser/upload}" class="nav-link">upload</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/siteuser/}" class="nav-link">log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>	
+    <br>
+    <br>
+    <section class="jumbotron text-center">
+    <div class="container">
+      <h1>환영합니다!</h1>
+      <p class="lead text-muted">
+      우리의 사이트에 오신 여러분을 진심으로 환영합니다. 반려동물을 사랑하고 소중히 여기는 당신을 위해 이곳을 만들었습니다.<br>
+		
+	  우리는 반려동물과 함께하는 즐거움을 공유하고, 그들에 대한 지식을 교환하는 공간을 제공합니다. 이곳에서는 다양한 종류의 반려동물을 소개하고, 돌봄 방법, 훈련 팁, 건강 관리에 관한 정보를 얻을 수 있습니다.<br>
+			
+	  우리는 반려동물과 함께하는 일상을 즐기며, 그들과 함께하는 특별한 순간들을 공유하기를 기대합니다. 함께 여행하고, 산책하고, 놀이를 즐기며 삶의 즐거움을 배우고 나누는 것이 우리의 목표입니다.
+	  </p>
+      <p>
+        <a th:href="@{/siteuser/login}" class="btn btn-primary my-2">Log In</a>
+        <a th:href="@{/siteuser/signup}" class="btn btn-secondary my-2">Sing Up</a>
+      </p>
+    </div>
+  </section>
+    
+    <div class="album py-5">
+    <div class="container">
+	
+      <div class="row">
+        <div class="col-sm">
+        	<div class="card h-100 " style="width: 18rem;">
+		  		<img src="/image/제로.png" class="card-img-top rounded float-left" style="height: 20rem" alt="프로필 이미지">
+		  		<div class="card-body d-flex flex-column"> <!-- 내용을 수직으로 배치 -->
+		    		<h5 class="card-title">제로</h5>
+		    		<p class="card-text" style="">태연 반려동물 제로의 인스타그램</p>
+		    		<a th:href="@{https://www.instagram.com/zero.taeyeon?igsh=MTBpdmJhYXliYTBvNg==}" class="btn btn-primary  mt-auto">Instagram</a>
+		  		</div>
+		  	</div>
+		  </div>
+		 <div class="col-sm">
+		 	<div class="card h-100" style="width: 18rem;">
+		 	 	<img src="/image/강형욱.png" class="card-img-top rounded float-left" alt="프로필 이미지">
+		  		<div class="card-body d-flex flex-column">
+		    		<h5 class="card-title">강형욱</h5>
+		   			<p class="card-text" style="">강형욱 인스타그램</p>
+		    		<a th:href="@{https://www.instagram.com/hunter.kang?igsh=ZDZreGJka2Qzbm12}" class="btn btn-primary  mt-auto">Instagram</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm">
+			<div class="card h-100" style="width: 18rem;">
+		  		<img src="/image/강형욱.png" class="card-img-top rounded float-left" alt="프로필 이미지">
+		 		<div class="card-body d-flex flex-column">
+		    		<h5 class="card-title">강형욱</h5>
+		    		<p class="card-text" style="">강형욱 인스타그램</p>
+		    		<a th:href="@{https://www.instagram.com/hunter.kang?igsh=ZDZreGJka2Qzbm12}" class="btn btn-primary  mt-auto">Instagram</a>
+		  		</div>
+			</div>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+	<div class="container">
+	 	<div class="row">
+			<div class="col-md-6">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/qglffq44cbc?si=3-dHaIYFFYyefYML" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+			<div class="col-md-6">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/QWWvoX0rz2M?si=3zRaf29J6XWrJIQl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+			<div class="col-md-6">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/EvBPqcbRQQc?si=5of_awQl6S-dZgKb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+			<div class="col-md-6">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/ernXYWmI-9U?si=X7f-T522Lyd3ufef" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	<footer class="text-muted">
+	  <div class="container">
+	    <p class="float-right">
+	      <a href="#">Back to top</a>
+	    </p>
+	    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+	    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
+	  </div>
+	</footer>
+	
+	 <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#mainNavbar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            })
+        })
+     // 인스타그램 주소로 리디렉션
+	  document.getElementById("instagramBtn").addEventListener("click", function() {
+	    window.location.href = "https://www.instagram.com/hunter.kang?igsh=ZDZreGJka2Qzbm12";
+	  });
+
+    </script>
+</body>
+</html>

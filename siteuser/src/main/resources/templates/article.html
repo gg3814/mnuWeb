@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<style>
+table,td {
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+}
+</style>
+<title>게시글</title>
+</head>
+<body>
+	<h3>게시글</h3>
+	<p> <a th:href="@{/siteuser/bbs}">글 목록</a></p>
+	
+  <table>
+    <tr>
+      <td>제목</td>
+      <td>[[${article.title}]]</td>
+    </tr>
+    <tr>
+      <td>작성자</td>
+      <td>[[${article.author}]]</td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>[[${article.body}]]</td>
+    </tr>
+  </table>
+	<!-- 댓글 작성 부분 -->
+    <div id="comment-write">
+        <input type="text" id="commentWriter" placeholder="작성자"> 
+        <input type="text" id="commentContents" placeholder="내용">
+        <button id="comment-write-btn" onclick="commentWrite()">댓글작성</button> 
+    </div>
+    
+    <!-- 댓글 출력 부분 -->
+    <div id="comment-list">
+        <!-- 댓글 목록이 여기에 나열되어야 합니다. -->
+    </div>
+
+    <!-- jQuery CDN 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- 자바스크립트 함수 -->
+    <script th:inline="javascript">
+        const commentWrite = () => {
+            const writer = document.getElementById("commentWriter").value;
+            const contents = document.getElementById("commentContents").value;
+            console.log("작성자: ", writer);
+            console.log("내용: ", contents); // 오타 수정
+            const id = [[${article.num}]]; /*게시글 번호 */
+            $.ajax({
+            	// 요청방식: post, 요청주소:/comment/save, 요청데이터: 작성자, 작성내용, 게시글 번호
+            	type:"post",
+            	url:"/comment/save",
+            	data:{
+            		"commentWriter":writer,
+            		"commentContents":contents,
+            		"articleId": id
+            	},
+            	succecc: function(res){
+            		console.log("요청 성공",res);
+            	},
+            	error:function(err){
+            		console.log("요청실패",err);
+            	}
+            });
+        }
+    </script>
+</body>
+</html>
